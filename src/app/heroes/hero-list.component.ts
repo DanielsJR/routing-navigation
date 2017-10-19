@@ -3,15 +3,14 @@ import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-
 import { Hero, HeroService } from './hero.service';
 
 @Component({
     template: `
     <h2>HEROES</h2>
     <ul class="items">
-      <li *ngFor="let hero of heroes$ | async" [class.selected]="hero.id === selectedId">
-        <a [routerLink]="['/hero', hero.id]">
+      <li *ngFor="let hero of heroes$ | async" [class.selected]= "hero.id === selectedId">
+        <a [routerLink]= "['/hero', hero.id]">
           <span class="badge">{{ hero.id }}</span>{{ hero.name }}
         </a>
       </li>

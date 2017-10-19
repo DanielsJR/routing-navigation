@@ -14,7 +14,7 @@ import { slideInDownAnimation } from './animations';
         <label>Message: </label>
       </div>
       <div>
-        <textarea [(ngModel)]="message" rows="10" cols="35" [disabled]="sending"></textarea>
+        <textarea [(ngModel)]= "message" rows="10" cols="35" [disabled]= "sending"></textarea>
       </div>
     </div>
     <p *ngIf="!sending">

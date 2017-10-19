@@ -20,7 +20,9 @@ export class CrisisService {
     static nextCrisisId = 100;
     private crises$: BehaviorSubject<Crisis[]> = new BehaviorSubject<Crisis[]>(CRISES);
 
-    getCrises() { return this.crises$; }
+    getCrises() {
+        return this.crises$;
+    }
 
     getCrisis(id: number | string) {
         return this.getCrises()

@@ -1,8 +1,7 @@
+import { CanDeactivateGuard } from '../guards/can-deactivate-guard.service';
 import { CrisisDetailResolver } from './crisis-detail-resolver.service';
-import { CanDeactivateGuard } from '../can-deactivate-guard.service';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { CrisisCenterHomeComponent } from './crisis-center-home.component';
 import { CrisisListComponent } from './crisis-list.component';
 import { CrisisCenterComponent } from './crisis-center.component';

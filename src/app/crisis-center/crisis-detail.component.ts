@@ -1,7 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-
 import { slideInDownAnimation } from '../animations';
 import { Crisis } from './crisis.service';
 import { DialogService } from '../dialog.service';
@@ -19,6 +18,7 @@ import { DialogService } from '../dialog.service';
     <p>
       <button (click)="save()">Save</button>
       <button (click)="cancel()">Cancel</button>
+      <a [routerLink]="['../', { id: crisis.id, foo: 'foo' }]" routerLinkActive="active">Back to Crisis</a>
     </p>
   </div>
   `,
@@ -67,7 +67,7 @@ export class CrisisDetailComponent implements OnInit {
     }
 
     gotoCrises() {
-        let crisisId = this.crisis ? this.crisis.id : null;
+        const crisisId = this.crisis ? this.crisis.id : null;
         // Pass along the crisis id if available
         // so that the CrisisListComponent can select that crisis.
         // Add a totally useless `foo` parameter for kicks.

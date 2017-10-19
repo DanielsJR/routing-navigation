@@ -1,13 +1,17 @@
+import { CanDeactivateGuard } from './guards/can-deactivate-guard.service';
+import { AuthGuard } from './guards/auth-guard.service';
 import { SelectivePreloadingStrategy } from './selective-preloading-strategy';
-import { AuthGuard } from './auth-guard.service';
-import { CanDeactivateGuard } from './can-deactivate-guard.service';
 import { ComposeMessageComponent } from './compose-message.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './not-found.component';
 
 const appRoutes: Routes = [
-    { path: 'compose', component: ComposeMessageComponent, outlet: 'popup' },
+    {
+        path: 'compose',
+        component: ComposeMessageComponent,
+        outlet: 'popup'
+    },
     {
         path: 'admin',
         loadChildren: 'app/admin/admin.module#AdminModule',
@@ -28,7 +32,7 @@ const appRoutes: Routes = [
             appRoutes,
             {
                 enableTracing: true, // <-- debugging purposes only
-                preloadingStrategy: SelectivePreloadingStrategy
+                preloadingStrategy: SelectivePreloadingStrategy  // for all use PreloadAllModules
             }
         )
     ],
